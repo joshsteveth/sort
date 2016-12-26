@@ -40,9 +40,12 @@ sort.BubbleSort(foo)
 ```
 
 ##Sorter interface
-Sort any type that fullfil the methods of Sorter
-Example:
+Sort any type that fullfils the methods of Sorter interface. Example:
 ```
+type cat struct {
+	name string
+}
+
 type cats []cat
 
 func (c cats) Len() int           { return len(c) }
