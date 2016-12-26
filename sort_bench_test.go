@@ -7,21 +7,28 @@ import (
 
 func BenchmarkStdLibSort(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		s := []int{5, 2, 6, 3, 1, 4, 3, 5, 3, 1, 2, 7, 8, 3}
+		s := createNewSlice(numElement)
 		gsort.Ints(s)
 	}
 }
 
 func BenchmarkHeapSort(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		s := []int{5, 2, 6, 3, 1, 4, 3, 5, 3, 1, 2, 7, 8, 3}
+		s := createNewSlice(numElement)
 		s = HeapSort(s)
 	}
 }
 
 func BenchmarkQuickSort(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		s := []int{5, 2, 6, 3, 1, 4, 3, 5, 3, 1, 2, 7, 8, 3}
+		s := createNewSlice(numElement)
 		QuickSort(s)
+	}
+}
+
+func BenchmarkBubbleSort(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		s := createNewSlice(numElement)
+		BubbleSort(s)
 	}
 }
