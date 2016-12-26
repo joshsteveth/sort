@@ -32,3 +32,35 @@ func BenchmarkBubbleSort(b *testing.B) {
 		BubbleSort(s)
 	}
 }
+
+func BenchmarkSorterInterface(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		c := []cat{
+			cat{"addie"},
+			cat{"moritz"},
+			cat{"roger"},
+			cat{"duwey"},
+			cat{"lorrie"},
+			cat{"jen"},
+			cat{"annie"},
+		}
+
+		Quick(cats(c))
+	}
+}
+
+func BenchmarkStdLibSorterInterface(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		c := []cat{
+			cat{"addie"},
+			cat{"moritz"},
+			cat{"roger"},
+			cat{"duwey"},
+			cat{"lorrie"},
+			cat{"jen"},
+			cat{"annie"},
+		}
+
+		gsort.Sort(cats(c))
+	}
+}
