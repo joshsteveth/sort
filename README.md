@@ -5,26 +5,32 @@
 - Heap sort
 - Quick sort
 
-Benchmark Result:
+Benchmark Result: //create slice with 200 random elem + sort
 ```
-//Go standard Library
-BenchmarkStdLibSort-4   	 3000000	       514 ns/op
-//Heap Sort
-BenchmarkHeapSort-4     	   30000	     47618 ns/op
-//Quick Sort (it's actually faster)
-BenchmarkQuickSort-4    	10000000	       158 ns/op
+//go std lib
+BenchmarkStdLibSort-4   	   50000	     32386 ns/op
+//heap sort (certainly not very well written by me lol)
+BenchmarkHeapSort-4     	     200	   6130642 ns/op
+//quick sort
+BenchmarkQuickSort-4    	  100000	     21035 ns/op
+//bubble sort
+BenchmarkBubbleSort-4   	   20000	     93965 ns/op
 ```
 
 ##Heap Sort
 ```
 foo := []int{6, 5, 3, 1, 8, 7, 2, 4, 4, 5}
 foo = sort.HeapSort(foo)
-//now foo should be: []int{1, 2, 3, 4, 4, 5, 5, 6, 7, 8}
 ```
 
 ##Quick Sort
 ```
 foo := []int{6, 5, 3, 1, 8, 7, 2, 4, 4, 5}
 sort.QuickSort(foo)
-//now foo should be: []int{1, 2, 3, 4, 4, 5, 5, 6, 7, 8}
+```
+
+##Bubble Sort
+```
+foo := []int{6, 5, 3, 1, 8, 7, 2, 4, 4, 5}
+sort.BubbleSort(foo)
 ```
