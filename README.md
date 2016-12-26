@@ -19,12 +19,12 @@ BenchmarkQuickSort-4    	10000000	       158 ns/op
 ```
 foo := []int{6, 5, 3, 1, 8, 7, 2, 4, 4, 5}
 foo = sort.HeapSort(foo)
-//foo should be now: []int{1, 2, 3, 4, 4, 5, 5, 6, 7, 8}
+//now foo should be: []int{1, 2, 3, 4, 4, 5, 5, 6, 7, 8}
 ```
 
 ##Quick Sort
 ```
 foo := []int{6, 5, 3, 1, 8, 7, 2, 4, 4, 5}
 sort.QuickSort(foo)
-//foo should be now: []int{1, 2, 3, 4, 4, 5, 5, 6, 7, 8}
+//now foo should be: []int{1, 2, 3, 4, 4, 5, 5, 6, 7, 8}
 ```
