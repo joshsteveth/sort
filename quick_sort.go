@@ -10,6 +10,10 @@
 
 package sort
 
+func QuickSort(inp []int) {
+	quickSort(inp, 0, len(inp)-1)
+}
+
 //quicksort algorithm based on current high and low part of the array
 func quickSort(inp []int, lo, hi int) {
 	//return if lo is already same with hi
