@@ -100,15 +100,15 @@ func getCurrentHeap(mp map[int][]*heap, currentHeap *heap, currentLevel int) (*h
 	return mp[currentLevel][0].leftChild, currentLevel + 1
 }
 
-//swap the value with parent if it is greater
-//parent should always have bigger value than its child
+//swap the value with parent if it is lesser
+//parent should always have lesser value than its child
 func (h *heap) swap() {
 	//return if this heap does not any parent
 	if h.parent == nil {
 		return
 	}
 
-	if h.value >= h.parent.value {
+	if h.value <= h.parent.value {
 		h.value, h.parent.value = h.parent.value, h.value
 		//also continue the swap for the parent as well
 		h.parent.swap()
