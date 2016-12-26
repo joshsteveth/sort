@@ -1,5 +1,5 @@
 ##Collection of sorting algorith
-###This is only for exercise, not fast or anything special (std library is 100x faster :p)
+###This is only for exercise, not very fast or anything special 
 
 ###Current features:
 - Heap sort
@@ -9,7 +9,7 @@ Benchmark Result: //create slice with 200 random elem + sort
 ```
 //go std lib
 BenchmarkStdLibSort-4   	   50000	     32386 ns/op
-//heap sort (certainly not very well written by me lol)
+//heap sort (certainly poorly written by me lol)
 BenchmarkHeapSort-4     	     200	   6130642 ns/op
 //quick sort
 BenchmarkQuickSort-4    	  100000	     21035 ns/op
