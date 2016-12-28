@@ -26,13 +26,16 @@ func quickSort(inp []int, lo, hi int) {
 	//loop from the start of the slice until the highest index minus the current pivot
 	for i := lo; i < pivot; i++ {
 		//compare the pivot value with the value of index i
+		//if it's greater than the current pivot, swap the value
+		//and then decrement pivot by 1
 		for inp[i] >= inp[pivot] && i < pivot {
-			//if it's greater than the current pivot, swap the value
 			inp[i], inp[pivot], inp[pivot-1] = inp[pivot-1], inp[i], inp[pivot]
-			//decrement pivot by 1
 			pivot--
 		}
 	}
+
+	//do the same for left and right side if the pivot
+	//iterate until the return condition
 	quickSort(inp, lo, pivot-1)
 	quickSort(inp, pivot+1, hi)
 }
